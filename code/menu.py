@@ -8,7 +8,7 @@ from code import background
 class Menu:
     def __init__(self, screen):
         self.window = screen
-        self.surf = pygame.image.load('./asset/background.png')
+        self.surf = pygame.image.load('./asset/backgroundMenu.png')
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):

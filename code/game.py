@@ -1,5 +1,6 @@
 import pygame
 
+from code.Const import SCR_WIDTH, SCR_HEIGHT
 from code.menu import Menu
 
 
@@ -9,9 +10,13 @@ from code.menu import Menu
 class Game:
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode(size=[576, 324])
+        self.screen = pygame.display.set_mode(size=(SCR_WIDTH, SCR_HEIGHT))
 
     def run(self,):
+        pygame.mixer_music.load('./asset/BossMain.wav')
+        pygame.mixer_music.play(-1)
+
+
         while True:
             menu = Menu(self.screen)
             menu.run()
