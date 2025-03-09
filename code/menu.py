@@ -4,10 +4,11 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
+from code.Const import SCR_WIDTH, COLOR_PURPLE, MENU_OPTION, COLOR_WHITE
+
 
 class Menu:
     def __init__(self, screen):
-        self.screen = None
         self.window = screen
         self.surf = pygame.image.load('./asset/backgroundMenu.png')
         self.rect = self.surf.get_rect(left=0, top=0)
@@ -16,8 +17,13 @@ class Menu:
         pygame.mixer_music.load('./asset/BossMain.wav')
         pygame.mixer_music.play(-1)
         while True:
-            self.menu_text(50, "Game", (255, 1, 217), ())
-            self.screen.blit(source=self.surf, dest=self.rect)
+            self.window.blit(source=self.surf, dest=self.rect)
+            self.menu_text(50, "Gangsters & Gold", COLOR_PURPLE, ((SCR_WIDTH / 2), 70))
+            self.menu_text(50, "Warzone", COLOR_PURPLE, ((SCR_WIDTH / 2), 110))
+
+            for i in range(len(MENU_OPTION)):
+                self.menu_text(20, MENU_OPTION(i), COLOR_WHITE, ((SCR_WIDTH / 2), 200 + 25 * i))
+
             pygame.display.flip()
 
             # check for all events
