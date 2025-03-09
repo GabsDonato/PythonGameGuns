@@ -13,10 +13,6 @@ class Game:
         self.screen = pygame.display.set_mode(size=(SCR_WIDTH, SCR_HEIGHT))
 
     def run(self,):
-        pygame.mixer_music.load('./asset/BossMain.wav')
-        pygame.mixer_music.play(-1)
-
-
         while True:
             menu = Menu(self.screen)
             menu.run()
@@ -24,8 +20,4 @@ class Game:
 
 
 
-    # check for all events
-    # for event in pygame.event.get():
-    #   if event.type == pygame.QUIT:
-    #      pygame.quit()  # close screen
-    #     quit()  # End pygame
+
