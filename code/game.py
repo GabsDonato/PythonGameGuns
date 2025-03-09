@@ -9,7 +9,7 @@ from code.menu import Menu
 class Game:
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode(size=(600, 480))
+        self.screen = pygame.display.set_mode(size=[576, 324])
 
     def run(self,):
         while True:
