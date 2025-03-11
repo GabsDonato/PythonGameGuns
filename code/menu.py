@@ -4,7 +4,8 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import SCR_WIDTH, COLOR_PURPLE, MENU_OPTION, COLOR_WHITE, COLOR_YELLOW, COLOR_PINK
+from code.Const import SCR_WIDTH, MENU_OPTION, COLOR_WHITE, COLOR_YELLOW, COLOR_BLUE, \
+     COLOR_ORANGE
 
 
 class Menu:
@@ -18,8 +19,8 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Gangsters & Gold", COLOR_PURPLE, ((SCR_WIDTH / 2), 70))
-            self.menu_text(50, "Warzone", COLOR_PINK, ((SCR_WIDTH / 2), 110))
+            self.menu_text(50, "Gangsters & Gold", COLOR_BLUE, ((SCR_WIDTH / 2), 70))
+            self.menu_text(50, "Warzone", COLOR_ORANGE, ((SCR_WIDTH / 2), 110))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
