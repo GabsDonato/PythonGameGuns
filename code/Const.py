@@ -14,6 +14,7 @@ ENTITY_SPEED = {
     'Level1BG3': 3,
     'Level1BG4': 4,
     'Level1BG5': 5,
+    'Level1BG6': 6,
 }
 
 #MENU

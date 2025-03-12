@@ -11,7 +11,7 @@ from code.Const import SCR_WIDTH, MENU_OPTION, COLOR_WHITE, COLOR_YELLOW, COLOR_
 class Menu:
     def __init__(self, screen):
         self.window = screen
-        self.surf = pygame.image.load('./asset/backgroundMenu.png')
+        self.surf = pygame.image.load('./asset/backgroundMenu.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
@@ -20,8 +20,8 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "GANGSTERS & GOLD", COLOR_BLUE, ((SCR_WIDTH / 2), 70))
-            self.menu_text(50, "Warzone", COLOR_ORANGE, ((SCR_WIDTH / 2), 110))
+            self.menu_text(50, "GANGSTERS & SOLDIER", COLOR_BLUE, ((SCR_WIDTH / 2), 70))
+            self.menu_text(50, "The war for gold", COLOR_ORANGE, ((SCR_WIDTH / 2), 110))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
