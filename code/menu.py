@@ -20,7 +20,7 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "GANGSTERS & SOLDIER", COLOR_BLUE, ((SCR_WIDTH / 2), 70))
+            self.menu_text(50, "Gangsters Vs Soldiers", COLOR_BLUE, ((SCR_WIDTH / 2), 70))
             self.menu_text(50, "The war for gold", COLOR_ORANGE, ((SCR_WIDTH / 2), 110))
 
             for i in range(len(MENU_OPTION)):
