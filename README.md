@@ -1,11 +1,29 @@
-<div style="text-align: center;">
-  
-# Gangsters VS Soldiers
 
-## Esse projeto tem como fins acadêmicos
-
-</div>
+# Gangsters VS Soldiers 🎮
+*Esse projeto tem fins acadêmicos - Uninter*
 
 
-![image](https://github.com/user-attachments/assets/92984ceb-0b5e-4cdf-928d-062e04224f8f)
+
+## Objetivo do trabalho
+*Utilizando como referência as aulas da disciplina, desenvolver um
+demo de jogo utilizando a linguagem Python.*
+
+## Links utilizados
+*Imagens e sons*:
+[https://craftpix.net/] [https://opengameart.org/] [https://freesound.org/]
+
+
+
+
+## Cores de referência
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| WHITE | #ffffff |
+| YELLOW | #fff96d |
+| BLUE | #00006d |
+| ORANGE | #ff6f00 |
+
+
+
 
