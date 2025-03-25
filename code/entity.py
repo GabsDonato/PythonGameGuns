@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from abc import ABC, abstractmethod
+from typing import Any
 
 import pygame.image
 
@@ -12,7 +13,7 @@ class Entity(ABC):
         self.spend = 0
 
     @abstractmethod
-    def move(self, ):
+    def move(self, ) -> Any:
         pass
 
 

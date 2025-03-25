@@ -28,3 +28,5 @@ MENU_OPTION = ('NEW GAME 1P',
 # tamanho e altura
 SCR_WIDTH = 576
 SCR_HEIGHT = 324
+
+
