@@ -10,9 +10,11 @@ from pygame.font import Font
 
 from code import EntityFactory
 from code.Const import SCR_HEIGHT, COLOR_WHITE, MENU_OPTION, SPAWN_TIME
+from code.Enemy import Enemy
 from code.EntityFactory import EntityFactory
 from code.Entity import Entity
 from code.EntityMediator import EntityMediator
+from code.player import Player
 
 
 class Level:
@@ -40,6 +42,8 @@ class Level:
             for ent in self.entity_list:
                 self.screen.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
+                if isinstance(ent, (Player, Enemy)):
+                    self.entity_list.append(ent.shoot())
 
             # Verificar se o tempo para criar um novo inimigo passou
             current_time = pygame.time.get_ticks()  # Tempo atual

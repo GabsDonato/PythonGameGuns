@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 import pygame.key
 
-from code.Const import SCR_WIDTH, SCR_HEIGHT, PLAYER_KEY_LEFT, PLAYER_KEY_RIGHT, PLAYER_KEY_SPACE
+from code.Const import SCR_WIDTH, SCR_HEIGHT, PLAYER_KEY_LEFT, PLAYER_KEY_RIGHT, PLAYER_KEY_SPACE, PLAYER_KEY_SHOOT
 from code.Entity import Entity
+from code.PlayerShot import PlayerShot
 
 
 class Player(Entity):
@@ -29,3 +30,8 @@ class Player(Entity):
         # Garantir que o jogador não passe do chão
         if self.rect.bottom >= SCR_HEIGHT:
             self.rect.bottom = SCR_HEIGHT
+
+    def shoot(self):
+        pressed_key = pygame.key.get_pressed()
+        if pressed_key[PLAYER_KEY_SHOOT[self.name]]:
+            return PlayerShot(name=f'{self.name}Shot', position=(self.rect.centerx, self.rect.centery))
