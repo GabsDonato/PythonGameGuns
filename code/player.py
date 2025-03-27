@@ -20,7 +20,7 @@ class Player(Entity):
             self.rect.centerx += 5  # Mover para a direita
         # Pulo
         if pressed_key[PLAYER_KEY_SPACE[self.name]] and self.rect.bottom >= SCR_HEIGHT:
-            self.rect.centery -= 100  # Ao aperta espaço = pulo curto
+            self.rect.centery -= 130  # Ao aperta espaço = pulo curto
         # fazer o jogador cair
         self.rect.centery += 0
         # Manter o jogador no chão

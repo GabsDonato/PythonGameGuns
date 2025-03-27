@@ -24,6 +24,6 @@ class EntityFactory:
             case 'Player2':
                 return Player('Player2', (4 + DISTANCIA_JOGADORES, SCR_HEIGHT / 2 - 30))
             case 'Enemy1':
-                return Enemy('Enemy1', (SCR_WIDTH + 80, 405 / 2 - 10))
+                return Enemy('Enemy1', (SCR_WIDTH + 80, 410 / 2 - 10))
             case 'Enemy2':
-                return Enemy('Enemy1', (SCR_WIDTH + 10, 405 / 2 - 10))
+                return Enemy('Enemy2', (SCR_WIDTH + 10, 430 / 2 - 10))

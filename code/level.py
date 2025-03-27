@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import random
 import sys
 from typing import Any
 
@@ -8,7 +9,7 @@ from pygame import Surface, Rect
 from pygame.font import Font
 
 from code import EntityFactory
-from code.Const import SCR_HEIGHT, COLOR_WHITE, MENU_OPTION
+from code.Const import SCR_HEIGHT, COLOR_WHITE, MENU_OPTION, SPAWN_TIME
 from code.EntityFactory import EntityFactory
 from code.Entity import Entity
 
@@ -26,8 +27,8 @@ class Level:
         if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
             self.entity_list.append(EntityFactory.get_entity('Player2'))
 
-            self.entity_list.append(EntityFactory.get_entity('Enemy1'))
-            self.entity_list.append(EntityFactory.get_entity('Enemy2'))
+        self.last_enemy_time = pygame.time.get_ticks()
+        self.enemy_interval = SPAWN_TIME
 
     def run(self, ) -> Any:
         pygame.mixer_music.load(f'./asset/Level1Music.wav')
@@ -38,6 +39,15 @@ class Level:
             for ent in self.entity_list:
                 self.screen.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
+
+            # Verificar se o tempo para criar um novo inimigo passou
+            current_time = pygame.time.get_ticks()  # Tempo atual
+            if current_time - self.last_enemy_time >= self.enemy_interval:
+                # Escolher aleatoriamente entre 'Enemy1' e 'Enemy2'
+                enemy_choice = random.choice(['Enemy1', 'Enemy2'])
+                self.entity_list.append(EntityFactory.get_entity(enemy_choice))
+                self.last_enemy_time = current_time
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
