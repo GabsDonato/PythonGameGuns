@@ -25,7 +25,9 @@ class Level:
         self.entity_list.append(EntityFactory.get_entity('Player1'))
         if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
             self.entity_list.append(EntityFactory.get_entity('Player2'))
-        # pygame.time.set_timer(EVENT_ENEMY, 2000)
+
+            self.entity_list.append(EntityFactory.get_entity('Enemy1'))
+            self.entity_list.append(EntityFactory.get_entity('Enemy2'))
 
     def run(self, ) -> Any:
         pygame.mixer_music.load(f'./asset/Level1Music.wav')
@@ -40,8 +42,6 @@ class Level:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                # if event.type == EVENT_ENEMY:
-                #     self.entity_list.append(EntityFactory.get_entity('Enemy1'))
 
             # printed text
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000:.1f}s', COLOR_WHITE, (10, 5))
