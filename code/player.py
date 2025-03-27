@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 import pygame.key
 
-from code.Const import SCR_WIDTH, SCR_HEIGHT, PLAYER_KEY_LEFT, PLAYER_KEY_RIGHT, PLAYER_KEY_SPACE, PLAYER_KEY_SHOOT
+from code.Const import SCR_WIDTH, SCR_HEIGHT, PLAYER_KEY_LEFT, PLAYER_KEY_RIGHT, PLAYER_KEY_SPACE, PLAYER_KEY_SHOOT, \
+    ENTITY_SHOT_DELAY
 from code.Entity import Entity
 from code.PlayerShot import PlayerShot
 
@@ -10,6 +11,7 @@ from code.PlayerShot import PlayerShot
 class Player(Entity):
     def __init__(self, name: str, position: tuple):
         super().__init__(name, position)
+        self.shot_delay = ENTITY_SHOT_DELAY[self.name]
 
     # Movimento do Player
     def move(self):
@@ -32,6 +34,14 @@ class Player(Entity):
             self.rect.bottom = SCR_HEIGHT
 
     def shoot(self):
-        pressed_key = pygame.key.get_pressed()
-        if pressed_key[PLAYER_KEY_SHOOT[self.name]]:
-            return PlayerShot(name=f'{self.name}Shot', position=(self.rect.centerx, self.rect.centery))
+        self.shot_delay -= 1
+        if self.shot_delay == 0:
+            self.shot_delay = ENTITY_SHOT_DELAY[self.name]
+            pressed_key = pygame.key.get_pressed()
+            if pressed_key[PLAYER_KEY_SHOOT[self.name]]:
+
+                if self.name == 'Player1' or self.name == 'Player2':
+                    position = (self.rect.centerx + 10, self.rect.centery)
+                else:
+                    position = (self.rect.centerx - 10, self.rect.centery)
+                return PlayerShot(name=f'{self.name}Shot', position=position)

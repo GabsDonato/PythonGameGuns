@@ -43,7 +43,9 @@ class Level:
                 self.screen.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
                 if isinstance(ent, (Player, Enemy)):
-                    self.entity_list.append(ent.shoot())
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
 
             # Verificar se o tempo para criar um novo inimigo passou
             current_time = pygame.time.get_ticks()  # Tempo atual
