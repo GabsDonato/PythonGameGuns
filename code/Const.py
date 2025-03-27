@@ -20,6 +20,8 @@ ENTITY_SPEED = {
     'Level1BG6': 6,
     'Player1': 3,
     'Player2': 3,
+    'Enemy1': 2,
+    'Enemy2': 1
 }
 
 # MENU
