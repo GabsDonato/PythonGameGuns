@@ -24,6 +24,20 @@ ENTITY_SPEED = {
     'Enemy2': 1
 }
 
+ENTITY_HEALTH = {
+    'Level1BG0': 999,
+    'Level1BG1': 999,
+    'Level1BG2': 999,
+    'Level1BG3': 999,
+    'Level1BG4': 999,
+    'Level1BG5': 999,
+    'Level1BG6': 999,
+    'Player1': 300,
+    'Player2': 300,
+    'Enemy1': 50,
+    'Enemy2': 60,
+}
+
 # MENU
 MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P - COOPERATIVE',
@@ -43,7 +57,6 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
 
 # S
 SPAWN_TIME = 4000
-
 
 # TAMANHO E ALTURA
 SCR_WIDTH = 576
