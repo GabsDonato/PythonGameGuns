@@ -2,6 +2,9 @@
 # Gangsters VS Soldiers 🎮
 *Esse projeto tem fins acadêmicos - Uninter*
 
+![image](https://github.com/user-attachments/assets/45d3dd3c-a6e2-4f61-b5af-40f1743778a5)
+
+
 
 
 ## Objetivo do trabalho
@@ -23,6 +26,8 @@ demo de jogo utilizando a linguagem Python.*
 | YELLOW | #fff96d |
 | BLUE | #00006d |
 | ORANGE | #ff6f00 |
+| GREEN | #008000d9 |
+| CYAN | #008080d9 |
 
 
 
