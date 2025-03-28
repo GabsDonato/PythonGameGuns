@@ -9,7 +9,7 @@ from pygame import Surface, Rect
 from pygame.font import Font
 
 from code import EntityFactory
-from code.Const import SCR_HEIGHT, COLOR_WHITE, MENU_OPTION, SPAWN_TIME
+from code.Const import SCR_HEIGHT, COLOR_WHITE, MENU_OPTION, SPAWN_TIME, COLOR_GREEN, COLOR_CYAN
 from code.Enemy import Enemy
 from code.EntityFactory import EntityFactory
 from code.Entity import Entity
@@ -46,6 +46,10 @@ class Level:
                     shoot = ent.shoot()
                     if shoot is not None:
                         self.entity_list.append(shoot)
+                if ent.name == 'Player1':
+                    self.level_text(14, f'Player1 - Health: {ent.health} | Score: {ent.score}', COLOR_GREEN, (10, 25))
+                if ent.name == 'Player2':
+                    self.level_text(14, f'Player2 - Health: {ent.health} | Score: {ent.score}', COLOR_CYAN, (10, 45))
 
             # Verificar se o tempo para criar um novo inimigo passou
             current_time = pygame.time.get_ticks()  # Tempo atual
