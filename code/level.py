@@ -10,7 +10,7 @@ from pygame.font import Font
 
 from code import EntityFactory
 from code.Const import SCR_HEIGHT, COLOR_WHITE, MENU_OPTION, SPAWN_TIME, COLOR_GREEN, COLOR_CYAN, \
-    EVENT_TIMEOUT, TIMEOUT_STEP, TIMEOUT_LEVEL
+    EVENT_TIMEOUT, TIMEOUT_STEP, TIMEOUT_LEVEL, SCR_WIDTH, COLOR_RED
 from code.Enemy import Enemy
 from code.EntityFactory import EntityFactory
 from code.Entity import Entity
@@ -87,6 +87,7 @@ class Level:
                         found_player = True
 
                 if not found_player:
+                    self.game_over(player_score)
                     return False
 
             # printed text
@@ -104,3 +105,31 @@ class Level:
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(left=text_pos[0], top=text_pos[1])
         self.window.blit(source=text_surf, dest=text_rect)
+
+    def game_over(self, player_score: list[int]):
+        """Exibe a tela de Game Over"""
+        pygame.mixer_music.stop()
+        pygame.mixer.music.load('./asset/game_over_music.wav')
+        pygame.mixer.music.play()
+
+        font = pygame.font.SysFont('Arial', 40)
+        text_game_over = font.render("GAME OVER", True, COLOR_RED)
+        text_rect = text_game_over.get_rect(center=(SCR_WIDTH // 2, SCR_HEIGHT // 2 - 50))
+        self.screen.blit(text_game_over, text_rect)
+
+        retry_text = pygame.font.SysFont('Arial', 15).render("Pressione ESC para voltar ao menu", True, COLOR_WHITE)
+        retry_rect = retry_text.get_rect(center=(SCR_WIDTH // 2, SCR_HEIGHT // 2 + 80))
+        self.screen.blit(retry_text, retry_rect)
+
+        pygame.display.flip()
+
+        waiting = True
+        while waiting:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:  # Se pressionar ESC, volta para o menu
+                        waiting = False
+                        return
