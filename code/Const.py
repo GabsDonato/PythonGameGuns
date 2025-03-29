@@ -137,3 +137,20 @@ TIMEOUT_LEVEL = 20000
 # TAMANHO E ALTURA
 SCR_WIDTH = 576
 SCR_HEIGHT = 324
+
+# S
+SCORE_POS = {'Title': (SCR_WIDTH / 2, 50),
+             'EnterName': (SCR_WIDTH / 2, 80),
+             'Label': (SCR_WIDTH / 2, 90),
+             'Name': (SCR_WIDTH / 2, 110),
+             0: (SCR_WIDTH / 2, 110),
+             1: (SCR_WIDTH / 2, 130),
+             2: (SCR_WIDTH / 2, 150),
+             3: (SCR_WIDTH / 2, 170),
+             4: (SCR_WIDTH / 2, 190),
+             5: (SCR_WIDTH / 2, 210),
+             6: (SCR_WIDTH / 2, 230),
+             7: (SCR_WIDTH / 2, 250),
+             8: (SCR_WIDTH / 2, 270),
+             9: (SCR_WIDTH / 2, 290),
+             }
