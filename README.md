@@ -28,6 +28,7 @@ demo de jogo utilizando a linguagem Python.*
 | ORANGE | #ff6f00 |
 | GREEN | #008000d9 |
 | CYAN | #008080d9 |
+| RED | #ff0000 |
 
 
 
