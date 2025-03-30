@@ -1,3 +1,5 @@
+import sys
+
 import pygame
 
 from code.Const import SCR_WIDTH, SCR_HEIGHT, MENU_OPTION
@@ -14,7 +16,7 @@ class Game:
         pygame.init()
         self.screen = pygame.display.set_mode(size=(SCR_WIDTH, SCR_HEIGHT))
 
-    def run(self, ):
+    def run(self):
         while True:
             score = Score(self.screen)
             menu = Menu(self.screen)
@@ -36,4 +38,5 @@ class Game:
                 pygame.quit()
                 quit()
             else:
-                pass
+                pygame.quit()
+                sys.exit()

@@ -30,6 +30,10 @@ demo de jogo utilizando a linguagem Python.*
 | CYAN | #008080d9 |
 | RED | #ff0000 |
 
+## Autor
+
+- [@GabsDonato](https://github.com/GabsDonato)
+
 
 
 
